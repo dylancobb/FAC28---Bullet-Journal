@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Zeyada', cursive;
+    background: linear-gradient(90deg, #fffdf5 20px, transparent 1%), linear-gradient(#fffdf5 20px, transparent 1%), black;
+    background-size: 22px 22px;
+}
+
+header {
+    padding: 36px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 58pt;
+}
