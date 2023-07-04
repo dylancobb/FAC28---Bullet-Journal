@@ -5,12 +5,11 @@
     <!-- Basic Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAGE TITLE</title>
+    <title>Bullet Journal App</title>
     <meta name="description" content="A todo list app styled after Ryder Carroll's Bullet Journal">
     <meta name="author" content="Dylan Cobb, George Klemperer">
     <!-- Stylesheets and Scripts -->
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
 </head>
 
 <body>
@@ -19,11 +18,27 @@
     </header>
     <main>
         <!-- Further subdivide into sections -->
-        <section>
+        <section class="notes">
+            <div class="items">
+                • This is a task<br />
+                X This is a completed task<br />
+                <strike>• This is a task that became irrelevant<br /></strike>
+                0 This is an event<br />
+                — This is a note
+            </div>
+            <div class="interface">
+                <span class="bullet-type">•</span>
+                <textarea class="text-input" rows="1" autofocus="true"></textarea>
+                <a href="javascript:;" onclick="prevBullet()">&lt;</a>
+                <span class="bullet-name">Task</span>
+                <a href="javascript:;" onclick="nextBullet()">&gt;</a>
+                <button onclick="addItem()">Add</button>
+            </div>
         </section>
     </main>
     <footer>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
