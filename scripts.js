@@ -35,7 +35,7 @@ function updateBullet() {
   }
 }
 
-// Removed this function in favoour of the oone below utilizing a template element
+// Removed this function in favoour of the one below utilizing a template element
 function addItem() {
   // Create the new element
   var newElement = document.createElement("p");
@@ -91,7 +91,6 @@ function bulletSwitch(clickedBullet) {
         // Handle any other cases here
         break;
     }
-  } else {
   }
 }
 
