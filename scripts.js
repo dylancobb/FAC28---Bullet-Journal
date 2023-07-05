@@ -98,7 +98,7 @@ function strikethroughSwitch(clickedItem) {
   if (clickedItem.parentElement.classList.contains("strikethrough")) {
     clickedItem.parentElement.classList.remove("strikethrough");
   } else {
+    clickedItem.parentElement.querySelector(".toDoBullet").innerHTML = "•";
     clickedItem.parentElement.classList.add("strikethrough");
-    clickedItem.parentElement.firstChild.innerHTML = "•";
   }
 }
