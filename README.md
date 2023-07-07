@@ -2,11 +2,11 @@
 
 - ~~Create HTML and CSS boilerplate code. (Dylan)~~
 - ~~Create preliminary tests (George)~~
-- Function to change the type of bullet being created on a new entry
-- Function to submit a new entry
+- ~~Function to change the type of bullet being created on a new entry~~
+- ~~Function to submit a new entry~~
 - UI to indent or un-indent a new entry
 - Function to control indentation UI
-- Switch to CSS grid layout
+- ~~Switch to CSS grid layout~~
 
 # Implementation
 
