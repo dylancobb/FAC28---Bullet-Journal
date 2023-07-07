@@ -5,6 +5,18 @@ const bulletName = document.querySelector(".bullet-name");
 const items = document.querySelector(".items");
 const textInput = document.querySelector(".text-input");
 
+// this block adds today's date formatted in the BuJo style when the page loads
+const opts = { day: "numeric", month: "numeric", weekday: "short" };
+let d = Intl.DateTimeFormat("en-UK", opts)
+    .format(new Date()).split('').filter(x => /[\w]/.test(x));
+const formattedDate = [
+  d.slice(3, 5).join(''),
+  d.slice(5, 7).join(''),
+  d.slice(0, 2).join('').toUpperCase()
+].join('.');
+document.querySelector(".date").textContent = formattedDate;
+
+
 // cycles forwards through bullet types when creating a new item
 function nextBullet() {
     bullet = bullet < 2 ? ++bullet : 0;
