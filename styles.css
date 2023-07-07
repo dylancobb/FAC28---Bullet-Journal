@@ -1,91 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&family=Reenie+Beanie&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zeyada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&family=Reenie+Beanie&display=swap");
 
 :root {
-    --color-background: #fffdf5;
-    --color-text: #303030;
-    --color-hover: #a0a0a0;
-    --color-click: #c0c0c0;
-    --font-size: 22pt;
+  --color-background: #fffdf5;
+  --color-text: #303030;
+  --color-hover: #a0a0a0;
+  --color-click: #c0c0c0;
+  --font-size: 22pt;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    /* font-family: 'Zeyada', cursive; */
-    font-family: 'Reenie Beanie', cursive;
-    font-size: var(--font-size);
-    color: #303030;
-    background: linear-gradient(90deg, var(--color-background) 20px, transparent 1%), linear-gradient(var(--color-background) 20px, transparent 1%), var(--color-text);
-    background-size: 22px 22px;
+  /* font-family: 'Zeyada', cursive; */
+  font-family: "Reenie Beanie", cursive;
+  font-size: var(--font-size);
+  color: #303030;
+  background: linear-gradient(
+      90deg,
+      var(--color-background) 20px,
+      transparent 1%
+    ),
+    linear-gradient(var(--color-background) 20px, transparent 1%),
+    var(--color-text);
+  background-size: 22px 22px;
 }
 
 header {
-    padding: 55px;
-    padding-bottom: 29px;
+  padding: 55px;
+  padding-bottom: 29px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 58pt;
+  text-align: center;
+  font-size: 58pt;
 }
 
 .notes {
-    width: 506px;
-    margin: auto;
+  width: 506px;
+  margin: auto;
 }
 
 .bullet-type {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .interface {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    vertical-align: middle;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: middle;
+  gap: 10px;
 }
 
 a {
-    height: 30px;
-    width: 30px;
-    border-radius: 15px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--color-background);
-    background-color: var(--color-text);
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-background);
+  background-color: var(--color-text);
 }
 
-a:hover, button:hover {
-    color: var(--color-background);
-    background-color: var(--color-hover);
+a:hover,
+button:hover {
+  color: var(--color-background);
+  background-color: var(--color-hover);
 }
 
-a:active, button:active {
-    color: var(--color-background);
-    background-color: var(--color-click);
+a:active,
+button:active {
+  color: var(--color-background);
+  background-color: var(--color-click);
 }
 
 textarea {
-    font-family: 'Reenie Beanie', cursive;
-    font-size: var(--font-size);
-    padding: 5px;
-    resize: none;
-    border: 2px solid #00000077;
-    background-color: #0000001c;
+  font-family: "Reenie Beanie", cursive;
+  font-size: var(--font-size);
+  padding: 5px;
+  resize: none;
+  border: 2px solid #00000077;
+  background-color: #0000001c;
 }
 
 button {
-    padding: 5px;
-    border: 2px;
-    border-radius: 5px;
-    font-family: 'Reenie Beanie', cursive;
-    font-size: var(--font-size);
-    color: var(--color-background);
-    background-color: var(--color-text);
+  padding: 5px;
+  border: 2px;
+  border-radius: 5px;
+  font-family: "Reenie Beanie", cursive;
+  font-size: var(--font-size);
+  color: var(--color-background);
+  background-color: var(--color-text);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }
