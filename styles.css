@@ -50,11 +50,14 @@ h1 {
 .interface {
     padding-top: 14px;
     display: grid;
+    grid-auto-columns: 22px;
+    grid-auto-rows: 44px;
     align-items: center;
     vertical-align: middle;
 }
 
 .input-line {
+    grid-column: 2 / 24;
     padding-top: 14px;
     display: flex;
     flex-direction: row;
@@ -63,8 +66,9 @@ h1 {
     gap: 10px;
 }
 
-.bullet-selector {
+.selectors {
     padding-top: 14px;
+    grid-column: 3 / 24;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -128,18 +132,37 @@ button {
 }
 
 .items {
-    padding-top: 9px;
-    padding-bottom: 9px;
+    line-height: 0.75;
+    padding-top: 13px;
+    padding-bottom: 10px;
     display: grid;
-    grid-auto-rows: 22px;
+    grid-auto-rows: min-content;
+    /* Use min-content instead of a fixed height */
+    grid-auto-columns: 22px;
 }
 
 .date {
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-column: 1 / 10;
 }
 
-.toDO {
-    grid-row-start: 4;
-    grid-row-end: 3;
+.spacer {
+    grid-column: 1 / 10;
+    height: 23px;
+}
+
+.toDo {
+    grid-column: 2 / 24;
+    display: grid;
+    grid-template-columns: 22px auto;
+    /* Adjusted to use grid-template-columns instead of grid-auto-columns */
+}
+
+.toDoBullet {
+    grid-column: 1 / 2;
+    /* Updated to start from the first column */
+}
+
+.toDoItemText {
+    grid-column: 2 / -1;
+    /* Updated to span across remaining columns */
 }

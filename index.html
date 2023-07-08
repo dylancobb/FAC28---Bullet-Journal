@@ -21,10 +21,11 @@
         <section class="notes">
             <div class="items">
                 <div class="date"></div>
+                <div class="spacer"></div>
                 <template id="toDoItemTemplate">
                     <div class="toDo">
-                        <span class="toDoBullet" onclick="bulletSwitch(this)"></span><span class="toDoGap"> </span><span
-                            class="toDoItemText"></span>
+                        <span class="toDoBullet" onclick="bulletSwitch(this)"></span>
+                        <span class="toDoItemText"></span>
                     </div>
                 </template>
             </div>
@@ -35,7 +36,10 @@
                     <!-- <button onclick="addItem()">Add</button> -->
                     <button onclick="addItemUsingTemplate()">Add</button>
                 </div>
-                <div class="bullet-selector">
+                <div class="selectors">
+                    <a href="javascript:;" onclick="indentLess()">&lt;</a>
+                    <span class="indent-level">0</span>
+                    <a href="javascript:;" onclick="indentMore()">&gt;</a>
                     <a href="javascript:;" onclick="prevBullet()">&lt;</a>
                     <span class="bullet-name">Task</span>
                     <a href="javascript:;" onclick="nextBullet()">&gt;</a>
