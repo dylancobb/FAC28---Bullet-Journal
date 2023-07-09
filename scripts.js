@@ -71,7 +71,9 @@ function addItemUsingTemplate() {
     domFragment.querySelector("div").id = "item" + counter;
 
     domFragment.querySelector(".toDoBullet").innerHTML = bulletType.innerHTML;
+    domFragment.querySelector(".toDoBullet").id = "itemBullet" + counter;
     domFragment.querySelector(".toDoItemText").innerHTML = textInput.value;
+    domFragment.querySelector(".toDoItemText").id = "itemText" + counter;
 
     if (domFragment.querySelector(".toDoBullet").innerHTML === "•") {
         domFragment.querySelector(".toDoBullet").classList.add("clickable");
