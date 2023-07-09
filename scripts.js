@@ -109,10 +109,12 @@ function bulletSwitch(clickedBullet) {
 }
 
 function strikethroughSwitch(clickedItem) {
-    if (clickedItem.parentElement.classList.contains("strikethrough")) {
-        clickedItem.parentElement.classList.remove("strikethrough");
+    /* got rid of parentElement for now because it was breaking on the new grid
+    layout and haven't figured out how to fix yet */
+    if (clickedItem.classList.contains("strikethrough")) {
+        clickedItem.classList.remove("strikethrough");
     } else {
-        clickedItem.parentElement.querySelector(".toDoBullet").innerHTML = "•";
-        clickedItem.parentElement.classList.add("strikethrough");
+        // clickedItem.parentElement.querySelector(".toDoBullet").innerHTML = "•";
+        clickedItem.classList.add("strikethrough");
     }
 }
