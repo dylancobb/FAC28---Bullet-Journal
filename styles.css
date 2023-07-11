@@ -166,3 +166,35 @@ button {
     grid-column: 2 / -1;
     /* Updated to span across remaining columns */
 }
+
+
+@media (max-width: 600px) {
+    /* body {
+        overflow-x: hidden;
+    } */
+
+    .notes {
+        width: 100vw;
+        margin: auto;
+    }
+
+    .toDo {
+        grid-column: 2 / 15;
+    }
+
+    .input-line {
+        grid-column: 2 / 16;
+    }
+
+    .selectors {
+        grid-column: 3 / 16;
+    }
+
+    .items {
+        margin-left: 2rem;
+    }
+
+    .interface {
+        margin-bottom: 1rem;
+    }
+}
