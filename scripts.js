@@ -121,3 +121,13 @@ function strikethroughSwitch(clickedItem) {
   }
 }
 
+// Adding enter key function to text-area
+const inputElement = document.getElementById("text-input");
+const submitButton = document.getElementById("submit-button");
+
+inputElement.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent default form submission behavior
+    submitButton.click();
+  }
+});
