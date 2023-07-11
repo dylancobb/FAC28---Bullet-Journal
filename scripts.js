@@ -8,115 +8,116 @@ const textInput = document.querySelector(".text-input");
 // this block adds today's date formatted in the BuJo style when the page loads
 const opts = { day: "numeric", month: "numeric", weekday: "short" };
 let d = Intl.DateTimeFormat("en-UK", opts)
-    .format(new Date()).split('').filter(x => /[\w]/.test(x));
+  .format(new Date())
+  .split("")
+  .filter((x) => /[\w]/.test(x));
 const formattedDate = [
-  d.slice(3, 5).join(''),
-  d.slice(5, 7).join(''),
-  d.slice(0, 2).join('').toUpperCase()
-].join('.');
+  d.slice(3, 5).join(""),
+  d.slice(5, 7).join(""),
+  d.slice(0, 2).join("").toUpperCase(),
+].join(".");
 document.querySelector(".date").textContent = formattedDate;
-
 
 // cycles forwards through bullet types when creating a new item
 function nextBullet() {
-    bullet = bullet < 2 ? ++bullet : 0;
-    updateBullet();
+  bullet = bullet < 2 ? ++bullet : 0;
+  updateBullet();
 }
 
 // cycles backwards through bullet types when creating a new item
 function prevBullet() {
-    bullet = bullet > 0 ? --bullet : 2;
-    updateBullet();
+  bullet = bullet > 0 ? --bullet : 2;
+  updateBullet();
 }
 
 // updates the currently selected bullet type
 function updateBullet() {
-    switch (bullet) {
-        case 0:
-            bulletType.innerHTML = "•";
-            bulletName.innerHTML = "Task";
-            return;
-        case 1:
-            bulletType.innerHTML = "—";
-            bulletName.innerHTML = "Note";
-            return;
-        case 2:
-            bulletType.innerHTML = "0";
-            bulletName.innerHTML = "Event";
-            return;
-    }
+  switch (bullet) {
+    case 0:
+      bulletType.innerHTML = "•";
+      bulletName.innerHTML = "Task";
+      return;
+    case 1:
+      bulletType.innerHTML = "—";
+      bulletName.innerHTML = "Note";
+      return;
+    case 2:
+      bulletType.innerHTML = "0";
+      bulletName.innerHTML = "Event";
+      return;
+  }
 }
 
 // Removed this function in favoour of the one below utilizing a template element
 function addItem() {
-    // Create the new element
-    var newElement = document.createElement("p");
-    newElement.id = "item" + counter;
-    newElement.innerHTML = textInput.value;
-    textInput.value = "";
+  // Create the new element
+  var newElement = document.createElement("p");
+  newElement.id = "item" + counter;
+  newElement.innerHTML = textInput.value;
+  textInput.value = "";
 
-    // Append the new element to items <div>
-    items.appendChild(newElement);
-    counter++;
+  // Append the new element to items <div>
+  items.appendChild(newElement);
+  counter++;
 }
 
 function addItemUsingTemplate() {
-    if (!textInput.value)
-        return;
-    // get the template for to do list items (from the HTML)
-    const template = document.querySelector("#toDoItemTemplate");
-    // clone the content of the template (returns a DocumentFragment)
-    const domFragment = template.content.cloneNode(true);
+  if (!textInput.value) return;
+  // get the template for to do list items (from the HTML)
+  const template = document.querySelector("#toDoItemTemplate");
+  // clone the content of the template (returns a DocumentFragment)
+  const domFragment = template.content.cloneNode(true);
 
-    domFragment.querySelector("div").id = "item" + counter;
+  domFragment.querySelector("div").id = "item" + counter;
 
-    domFragment.querySelector(".toDoBullet").innerHTML = bulletType.innerHTML;
-    domFragment.querySelector(".toDoBullet").id = "itemBullet" + counter;
-    domFragment.querySelector(".toDoItemText").innerHTML = textInput.value;
-    domFragment.querySelector(".toDoItemText").id = "itemText" + counter;
+  domFragment.querySelector(".toDoBullet").innerHTML = bulletType.innerHTML;
+  domFragment.querySelector(".toDoBullet").id = "itemBullet" + counter;
+  domFragment.querySelector(".toDoItemText").innerHTML = textInput.value;
+  domFragment.querySelector(".toDoItemText").id = "itemText" + counter;
 
-    if (domFragment.querySelector(".toDoBullet").innerHTML === "•") {
-        domFragment.querySelector(".toDoBullet").classList.add("clickable");
-        domFragment.querySelector(".toDoItemText").classList.add("clickable");
-        domFragment
-            .querySelector(".toDoItemText")
-            .addEventListener("click", function () {
-                strikethroughSwitch(this);
-            });
-    }
+  if (domFragment.querySelector(".toDoBullet").innerHTML === "•") {
+    domFragment.querySelector(".toDoBullet").classList.add("clickable");
+    domFragment.querySelector(".toDoItemText").classList.add("clickable");
+    domFragment
+      .querySelector(".toDoItemText")
+      .addEventListener("click", function () {
+        strikethroughSwitch(this);
+      });
+  }
 
-    items.appendChild(domFragment);
-    textInput.value = "";
-    counter++;
+  items.appendChild(domFragment);
+  textInput.value = "";
+  counter++;
 }
 
 function bulletSwitch(clickedBullet) {
-    const toDoBullet = clickedBullet;
+  const toDoBullet = clickedBullet;
 
-    if (
-        clickedBullet.parentElement.classList.contains("strikethrough") === false
-    ) {
-        switch (toDoBullet.innerHTML) {
-            case "•":
-                toDoBullet.innerHTML = "X";
-                break;
-            case "X":
-                toDoBullet.innerHTML = "•";
-                break;
-            default:
-                // Handle any other cases here
-                break;
-        }
+  if (
+    clickedBullet.parentElement.classList.contains("strikethrough") === false
+  ) {
+    switch (toDoBullet.innerHTML) {
+      case "•":
+        toDoBullet.innerHTML = "X";
+        break;
+      case "X":
+        toDoBullet.innerHTML = "•";
+        break;
+      default:
+        // Handle any other cases here
+        break;
     }
+  }
 }
 
 function strikethroughSwitch(clickedItem) {
-    /* got rid of parentElement for now because it was breaking on the new grid
+  /* got rid of parentElement for now because it was breaking on the new grid
     layout and haven't figured out how to fix yet */
-    if (clickedItem.classList.contains("strikethrough")) {
-        clickedItem.classList.remove("strikethrough");
-    } else {
-        // clickedItem.parentElement.querySelector(".toDoBullet").innerHTML = "•";
-        clickedItem.classList.add("strikethrough");
-    }
+  if (clickedItem.classList.contains("strikethrough")) {
+    clickedItem.classList.remove("strikethrough");
+  } else {
+    // clickedItem.parentElement.querySelector(".toDoBullet").innerHTML = "•";
+    clickedItem.classList.add("strikethrough");
+  }
 }
+
