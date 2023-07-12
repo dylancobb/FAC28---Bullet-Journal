@@ -167,6 +167,10 @@ button {
     /* Updated to span across remaining columns */
 }
 
+.interface {
+    margin-bottom: 1rem;
+}
+
 
 @media (max-width: 600px) {
     /* body {
@@ -193,9 +197,5 @@ button {
 
     .items {
         margin-left: 2rem;
-    }
-
-    .interface {
-        margin-bottom: 1rem;
     }
 }
