@@ -5,7 +5,7 @@
 - ~~Function to change the type of bullet being created on a new entry~~
 - ~~Function to submit a new entry~~
 - ~~UI to indent or un-indent a new entry~~
-- Function to control indentation UI
+- ~~Function to control indentation UI~~
 - ~~Switch to CSS grid layout~~
 
 # Implementation
