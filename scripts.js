@@ -23,8 +23,14 @@ const formattedDate = [
 document.querySelector(".date").textContent = formattedDate;
 
 function indentMore() {
+  if (anItemExists === false) {
+    indentLevel.textContent = 0;
+  } else {
   if (indent < lastIndent + 1 && anItemExists)
+  {
     indentLevel.textContent = ++indent;
+  }
+}
 }
 
 function indentLess() {

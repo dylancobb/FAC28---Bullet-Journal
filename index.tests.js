@@ -111,4 +111,7 @@ test("Clicking on a task should strike it through", () => {
 
   //Reset counter
   counter = 0;
+
+  //Reset variable
+  anItemExists = false;
 });
