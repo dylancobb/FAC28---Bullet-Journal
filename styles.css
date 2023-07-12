@@ -180,6 +180,7 @@ button {
 
     .toDo {
         grid-column: 2 / 15;
+        grid-column-end: 15 !important;
     }
 
     .input-line {
